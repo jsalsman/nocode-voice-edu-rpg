@@ -5,7 +5,7 @@ A no-code instructional role-playing game generator with voice I/O on [Vapi.ai](
 
 The First Message is: Greetings! Please tell me what you want to be able to do.
 
-The System Prompt is in [system-prompt.txt](system-prompt.txt).
+The System Prompt is in [system-prompt.txt](system-prompt.txt) which uses meta-prompting and a one-shot example.
 
 Max Tokens: 1000
 
