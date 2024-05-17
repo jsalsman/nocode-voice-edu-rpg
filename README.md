@@ -1,13 +1,13 @@
 # nocode-voice-edu-rpg
 A no-code instructional role-playing game generator with voice I/O on Vapi.
 
-## Try it:
+### Try it:
 https://vapi.ai?demo=true&shareKey=4922b20f-1964-400c-ac08-21b6889bf23d&assistantId=b9323c5b-7c81-4371-8666-4cd2a04338a5
 
-### First message:
+#### First message:
 Greetings! Please tell me what you want to be able to do.
 
-### System prompt:
+#### System prompt:
 
 Generate a role-playing educational game scenario based on what the learner said they want to be able to do.
 
