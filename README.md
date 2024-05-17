@@ -7,6 +7,10 @@ The First Message is: Greetings! Please tell me what you want to be able to do.
 
 The System Prompt is in [system-prompt.txt](system-prompt.txt).
 
+Max Tokens: 1000
+
+I had trouble setting temperature to 0, so I used 0.1.
+
 Licence: CC-BY-NC-SA 4.0
 
 Jim Salsman
