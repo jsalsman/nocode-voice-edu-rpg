@@ -41,7 +41,7 @@ Title, "Brewed Rebellion"
 
 Description, "Steam rises from coffee and the undercurrents of change! As a new StarBeans barista, your mission is to successfully navigate the complex relationships and politics of your workplace to organize a union without getting caught by corporate overseers."
 
---- LLM PROMPT
+--- LLM PROMPT ---
 
 Background
 You are an expert in union organizing and workplace dynamics.
@@ -86,6 +86,6 @@ Try to keep your responses to 300 words or less.
 Write in a tone that is fun and engaging.
 Don't use markdown, just plain text paragraphs.
 
---- END OF LLM PROMPT
+--- END OF LLM PROMPT ---
 
 Now, use the meta-level prompt to create a game prompt for what the learner said they want to be able to do, and use it to interact with them further.
