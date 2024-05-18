@@ -28,7 +28,7 @@
   <body>
     <h1>Voice instructional role-playing game generator</h1>
     
-<script>
+  <script>
   // from https://docs.vapi.ai/examples/voice-widget
   // kind of want to use a <iframe> for https://vapi.ai?demo=true&shareKey=4922b20f-1964-400c-ac08-21b6889bf23d&assistantId=b9323c5b-7c81-4371-8666-4cd2a04338a5
   
@@ -36,31 +36,31 @@
   const assistant = "b9323c5b-7c81-4371-8666-4cd2a04338a5"; // assistant ID
   const apiKey = "4922b20f-1964-400c-ac08-21b6889bf23d"; // Public key from Vapi Dashboard
   const buttonConfig = { /*
-  position: "bottom-right", // "bottom" | "top" | "left" | "right" | "top-right" | "top-left" | "bottom-left" | "bottom-right"
-  offset: "40px", // decide how far the button should be from the edge
-  width: "50px", // min-width of the button
-  height: "50px", // height of the button
-  idle: { // button state when the call is not active.
-    color: `rgb(93, 254, 202)`, 
-    type: "pill", // or "round"
-    title: "Have a quick question?", // only required in case of Pill
-    subtitle: "Talk with our AI assistant", // only required in case of pill
-    icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
-  },
-  loading: { // button state when the call is connecting
-    color: `rgb(93, 124, 202)`,
-    type: "pill", // or "round"
-    title: "Connecting...", // only required in case of Pill
-    subtitle: "Please wait", // only required in case of pill
-    icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
-  },
-  active: { // button state when the call is in progress or active.
-    color: `rgb(255, 0, 0)`,
-    type: "pill", // or "round"
-    title: "Call is in progress...", // only required in case of Pill
-    subtitle: "End the call.", // only required in case of pill
-    icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
-  },
+    position: "bottom-right", // "bottom" | "top" | "left" | "right" | "top-right" | "top-left" | "bottom-left" | "bottom-right"
+    offset: "40px", // decide how far the button should be from the edge
+    width: "50px", // min-width of the button
+    height: "50px", // height of the button
+    idle: { // button state when the call is not active.
+      color: `rgb(93, 254, 202)`, 
+      type: "pill", // or "round"
+      title: "Have a quick question?", // only required in case of Pill
+      subtitle: "Talk with our AI assistant", // only required in case of pill
+      icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
+    },
+    loading: { // button state when the call is connecting
+      color: `rgb(93, 124, 202)`,
+      type: "pill", // or "round"
+      title: "Connecting...", // only required in case of Pill
+      subtitle: "Please wait", // only required in case of pill
+      icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
+    },
+    active: { // button state when the call is in progress or active.
+      color: `rgb(255, 0, 0)`,
+      type: "pill", // or "round"
+      title: "Call is in progress...", // only required in case of Pill
+      subtitle: "End the call.", // only required in case of pill
+      icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
+    },
   */ 
   };
 
@@ -79,35 +79,29 @@
         assistant: assistant, // mandatory
         config: buttonConfig, // optional
       });
+      
+      function log_message(message) {
+        var timestamp = new Date().toLocaleTimeString();
+        var pre = document.createElement('pre');
+        pre.textContent = `[${timestamp}] ${message}`;
+        pre.style.fontSize = '11pt';
+        pre.style.fontFamily = 'sans-serif';
+        document.body.appendChild(pre);
+      }
+  
+      // Function calls and transcripts will be sent via messages
+      vapiInstance.on('message', (message) => {
+        log_message(message);
+      });
+
+      vapiInstance.on('error', (e) => {
+        console.error(e)
+        log_message(e);
+      });
+
     };
   })(document, "script");
 
-function log(message) {
-    // Create a timestamp
-    var timestamp = new Date().toLocaleTimeString();
-
-    // Create a <pre> element
-    var pre = document.createElement('pre');
-    
-    // Set the message with the timestamp as the text content of the <pre> element
-    pre.textContent = `[${timestamp}] ${message}`;
-
-    // Apply the desired font size and family
-    pre.style.fontSize = '11pt';
-    pre.style.fontFamily = 'sans-serif';
-
-    // Append the <pre> element to the body
-    document.body.appendChild(pre);
-}
-  
-  // Function calls and transcripts will be sent via messages
-  vapiInstance.on('message', (message) => {
-    log(message);
-  });
-
-  vapiInstance.on('error', (e) => {
-    console.error(e)
-    log(e);
-  });
-</script>
+  </script>
 </body>
+</html>
