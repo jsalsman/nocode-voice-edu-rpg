@@ -9,7 +9,7 @@ The System Prompt is in [system-prompt.txt](system-prompt.txt) which uses meta-p
 
 Max Tokens: 1000
 
-I had trouble setting temperature to 0, so I used 0.1.
+Maximum duration: 50 minutes
 
 Licence: CC-BY-NC-SA 4.0
 
