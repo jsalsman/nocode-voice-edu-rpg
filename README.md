@@ -13,8 +13,6 @@ Max Tokens: 1000
 
 Maximum duration: 60 minutes (3600 seconds).
 
-by Jim Salsman
+by Jim Salsman, May 17, 2024
 
-May 17, 2024
-
-Licence: CC-BY-NC-SA 4.0
+License: CC-BY-NC-SA 4.0
