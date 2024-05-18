@@ -27,6 +27,10 @@
   </head>
   <body>
     <h1>Voice instructional role-playing game generator</h1>
+
+    <hr/>
+    <div id="conversation"></div>
+    <hr/>
     
   <script>
   // from https://docs.vapi.ai/examples/voice-widget
@@ -82,15 +86,55 @@
       
       function log_message(message) {
         var timestamp = new Date().toLocaleString();
-        var pre = document.createElement('pre');
-        if (typeof message === 'object') {
-          // Convert the object to a string representation
-          message = JSON.stringify(message, null, 2);
+
+        // Check if the message is an object and has a "type" property
+        if (typeof message === 'object' && message.type === 'conversation-update') {
+            // Find the conversation div
+            var conversationDiv = document.getElementById('conversation');
+
+            // Clear the conversation div
+            conversationDiv.innerHTML = '';
+
+            // Add the timestamp
+            var timestampElement = document.createElement('p');
+            timestampElement.textContent = `[${timestamp}]`;
+            conversationDiv.appendChild(timestampElement);
+
+            // Loop through the conversation array
+            message.conversation.forEach(entry => {
+                var p = document.createElement('p');
+                p.textContent = entry.content;
+
+                // Apply different styles based on the role
+                if (entry.role === 'user') {
+                    p.style.fontFamily = 'serif';
+                } else if (entry.role === 'assistant') {
+                    p.style.fontFamily = 'sans-serif';
+                }
+
+                // Append the paragraph to the conversation div
+                conversationDiv.appendChild(p);
+            });
+        } else {
+            // Create a <pre> element for normal log messages
+            var pre = document.createElement('pre');
+
+            // Check if the message is an object
+            if (typeof message === 'object') {
+                // Convert the object to a string representation
+                message = JSON.stringify(message, null, 2);
+            }
+
+            // Set the message with the timestamp as the text content of the <pre> element
+            pre.textContent = `[${timestamp}] ${message}`;
+
+            // Apply the desired font size and family
+            pre.style.fontSize = '11pt';
+            pre.style.fontFamily = 'sans-serif';
+
+            // Append the <pre> element to the body
+            document.body.appendChild(pre);
         }
-        pre.textContent = `[${timestamp}] ${message}`;
-        pre.style.fontSize = '11pt';
-        pre.style.fontFamily = 'sans-serif';
-        document.body.appendChild(pre);
       }
   
       // Function calls and transcripts will be sent via messages
