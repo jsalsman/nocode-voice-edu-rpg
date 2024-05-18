@@ -81,8 +81,12 @@
       });
       
       function log_message(message) {
-        var timestamp = new Date().toLocaleTimeString();
+        var timestamp = new Date().toLocaleString();
         var pre = document.createElement('pre');
+        if (typeof message === 'object') {
+          // Convert the object to a string representation
+          message = JSON.stringify(message, null, 2);
+        }
         pre.textContent = `[${timestamp}] ${message}`;
         pre.style.fontSize = '11pt';
         pre.style.fontFamily = 'sans-serif';
