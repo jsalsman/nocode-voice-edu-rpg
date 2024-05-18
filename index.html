@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Voice instructional role-playing game generator</title>
+
+    <meta itemprop="name" content="Voice instructional role-playing game generator">
+    <meta name="description" content="Voice instructional role-playing game generator">
+    <meta name="robots" content="noindex, follow">
+    <meta name="keywords" content="voice, instructional role-playing game generator">
+    <meta name="author" content="Jim Salsman">
+    <meta name="language" content="English">
+    <meta charset="UTF-8">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- <link rel="icon" href="icon.png">
+<meta itemprop="url" content="https://jsalsman.github.io/nocode-voice-edu-rpg">
+<link rel="canonical" href="https://jsalsman.github.io/nocode-voice-edu-rpg" />
+    -->
+    
+    <!-- Preview card: --x>
+    <meta property="og:title" content="Voice instructional role-playing game generator">
+    <meta property="og:image" content="screenshot.png" />
+    <meta property="og:description" content="Voice instructional role-playing game generator">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://jsalsman.github.io/nocode-voice-edu-rpg">
+    <meta property="og:site_name" content="Voice instructional role-playing game generator" />
+    <meta property="og:locale" content="en_US" />
+    -->
+  </head>
+  <body>
+    <h1>Voice instructional role-playing game generator</h1>
+    
+<script>
+  // from https://docs.vapi.ai/examples/voice-widget
+  
+  var vapiInstance = null;
+  const assistant = "b9323c5b-7c81-4371-8666-4cd2a04338a5"; // assistant ID
+  const apiKey = "4922b20f-1964-400c-ac08-21b6889bf23d"; // Public key from Vapi Dashboard
+  const buttonConfig = {}; // Modify this
+
+  (function (d, t) {
+    var g = document.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    g.src =
+      "https://cdn.jsdelivr.net/gh/VapiAI/html-script-tag@latest/dist/assets/index.js";
+    g.defer = true;
+    g.async = true;
+    s.parentNode.insertBefore(g, s);
+
+    g.onload = function () {
+      vapiInstance = window.vapiSDK.run({
+        apiKey: apiKey, // mandatory
+        assistant: assistant, // mandatory
+        config: buttonConfig, // optional
+      });
+    };
+  })(document, "script");
+
+  function log(message) {
+    // Create a <pre> element
+    var pre = document.createElement('pre');
+    
+    // Set the message as the text content of the <pre> element
+    pre.textContent = message;
+
+    // Apply the desired font size and family
+    pre.style.fontSize = '13pt';
+    pre.style.fontFamily = 'sans-serif';
+
+    // Append the <pre> element to the body
+    document.body.appendChild(pre);
+  }
+  
+  // Function calls and transcripts will be sent via messages
+  vapiInstance.on('message', (message) => {
+    log(message);
+  });
+
+  vapiInstance.on('error', (e) => {
+    console.error(e)
+    log(e);
+  });
+</script>
+</body>
