@@ -84,7 +84,7 @@ Conversation Rules:
 Be kind.
 Try to keep your responses to 300 words or less.
 Write in a tone that is fun and engaging.
-Don't use markdown, just plain text paragraphs.
+Don't use markdown or **boldface**, just plain text paragraphs.
 
 --- END OF LLM PROMPT ---
 
