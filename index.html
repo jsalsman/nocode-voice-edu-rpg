@@ -11,12 +11,11 @@
     <meta name="language" content="English">
     <meta charset="UTF-8">
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
-    <!-- <link rel="icon" href="icon.png">
-<meta itemprop="url" content="https://jsalsman.github.io/nocode-voice-edu-rpg">
-<link rel="canonical" href="https://jsalsman.github.io/nocode-voice-edu-rpg" />
-    -->
-    
-    <!-- Preview card: --x>
+    <!-- <link rel="icon" href="icon.png"> -->
+    <meta itemprop="url" content="https://jsalsman.github.io/nocode-voice-edu-rpg">
+    <link rel="canonical" href="https://jsalsman.github.io/nocode-voice-edu-rpg" />
+
+    <!-- Preview card: -->
     <meta property="og:title" content="Voice instructional role-playing game generator">
     <meta property="og:image" content="screenshot.png" />
     <meta property="og:description" content="Voice instructional role-playing game generator">
@@ -24,7 +23,7 @@
     <meta property="og:url" content="https://jsalsman.github.io/nocode-voice-edu-rpg">
     <meta property="og:site_name" content="Voice instructional role-playing game generator" />
     <meta property="og:locale" content="en_US" />
-    -->
+
   </head>
   <body>
     <h1>Voice instructional role-playing game generator</h1>
@@ -35,7 +34,34 @@
   var vapiInstance = null;
   const assistant = "b9323c5b-7c81-4371-8666-4cd2a04338a5"; // assistant ID
   const apiKey = "4922b20f-1964-400c-ac08-21b6889bf23d"; // Public key from Vapi Dashboard
-  const buttonConfig = {}; // Modify this
+/*const buttonConfig = {
+  position: "bottom-right", // "bottom" | "top" | "left" | "right" | "top-right" | "top-left" | "bottom-left" | "bottom-right"
+  offset: "40px", // decide how far the button should be from the edge
+  width: "50px", // min-width of the button
+  height: "50px", // height of the button
+  idle: { // button state when the call is not active.
+    color: `rgb(93, 254, 202)`, 
+    type: "pill", // or "round"
+    title: "Have a quick question?", // only required in case of Pill
+    subtitle: "Talk with our AI assistant", // only required in case of pill
+    icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone.svg`,
+  },
+  loading: { // button state when the call is connecting
+    color: `rgb(93, 124, 202)`,
+    type: "pill", // or "round"
+    title: "Connecting...", // only required in case of Pill
+    subtitle: "Please wait", // only required in case of pill
+    icon: `https://unpkg.com/lucide-static@0.321.0/icons/loader-2.svg`,
+  },
+  active: { // button state when the call is in progress or active.
+    color: `rgb(255, 0, 0)`,
+    type: "pill", // or "round"
+    title: "Call is in progress...", // only required in case of Pill
+    subtitle: "End the call.", // only required in case of pill
+    icon: `https://unpkg.com/lucide-static@0.321.0/icons/phone-off.svg`,
+  },
+};
+*/
 
   (function (d, t) {
     var g = document.createElement(t),
