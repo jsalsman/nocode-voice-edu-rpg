@@ -30,6 +30,7 @@
     
 <script>
   // from https://docs.vapi.ai/examples/voice-widget
+  // kind of want to use a <iframe> for https://vapi.ai?demo=true&shareKey=4922b20f-1964-400c-ac08-21b6889bf23d&assistantId=b9323c5b-7c81-4371-8666-4cd2a04338a5
   
   var vapiInstance = null;
   const assistant = "b9323c5b-7c81-4371-8666-4cd2a04338a5"; // assistant ID
@@ -81,20 +82,23 @@
     };
   })(document, "script");
 
-  function log(message) {
+function log(message) {
+    // Create a timestamp
+    var timestamp = new Date().toLocaleTimeString();
+
     // Create a <pre> element
     var pre = document.createElement('pre');
     
-    // Set the message as the text content of the <pre> element
-    pre.textContent = message;
+    // Set the message with the timestamp as the text content of the <pre> element
+    pre.textContent = `[${timestamp}] ${message}`;
 
     // Apply the desired font size and family
-    pre.style.fontSize = '13pt';
+    pre.style.fontSize = '11pt';
     pre.style.fontFamily = 'sans-serif';
 
     // Append the <pre> element to the body
     document.body.appendChild(pre);
-  }
+}
   
   // Function calls and transcripts will be sent via messages
   vapiInstance.on('message', (message) => {
