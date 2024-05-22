@@ -22,19 +22,6 @@ Title: Brewed Rebellion
 
 Description: Steam rises from coffee and the undercurrents of change! As a new StarBeans barista, your mission is to successfully navigate the complex relationships and politics of your workplace to organize a union without getting caught by corporate overseers.
 
-The secret LLM prompt should cover the following aspects:
-
-Background: Define the player's role and expertise areas.
-Workflow Steps: Outline the game progression in stages, describing specific player actions and corresponding system responses.
-Conversation Rules: Set guidelines for the game's tone and interaction style.
-Additional Notes: Include educational segments and narrative elements to enhance engagement and learning.
-
-Use the example below for reference.
-
-Example:
-
-Can-Do Competency: "Can effectively organize a union in a corporate workplace."
-
 Example Output:
 
 Title, "Brewed Rebellion"
